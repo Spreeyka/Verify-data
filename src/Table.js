@@ -1,28 +1,38 @@
-export function Table() {
+import { Link } from "react-router-dom";
+
+export function Table(props) {
+  let { id = 0 } = props;
+
   return (
     <table className="table table-striped">
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">Name</th>
-          <th scope="col">Address</th>
+          <th scope="col">Description</th>
+          <th scope="col">Charts</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row">{++id}</th>
           <td>API1</td>
-          <td>API1.com.pl</td>
+          <td>
+            <Link to={`/charts/${id}`}>API1</Link>
+          </td>
         </tr>
         <tr>
-          <th scope="row">2</th>
+          <th scope="row">{++id}</th>
           <td>API2</td>
-          <td>API2.com.pl</td>
+          <td>
+            <Link to={`/charts/${id}`}>API2</Link>
+          </td>
         </tr>
         <tr>
-          <th scope="row">3</th>
+          <th scope="row">{++id}</th>
           <td>API3</td>
-          <td>API3.com.pl</td>
+          <td>
+            <Link to={`/charts/${id}`}>API3</Link>
+          </td>
         </tr>
       </tbody>
     </table>
