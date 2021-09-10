@@ -30,3 +30,11 @@ header {
 .table {
   margin-bottom: 0 !important;
 }
+
+.data {
+  color: white;
+}
+
+.recharts-legend-wrapper {
+  bottom: -1rem !important;
+}
