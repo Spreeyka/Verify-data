@@ -35,6 +35,12 @@ header {
   color: white;
 }
 
-.recharts-legend-wrapper {
+/* .recharts-legend-wrapper {
   bottom: -1rem !important;
+} */
+
+.chart-container {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 600px 500px;
 }

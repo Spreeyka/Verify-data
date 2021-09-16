@@ -13,13 +13,13 @@ export default function Charts(props) {
   return (
     <LineChart
       width={600}
-      height={400}
+      height={350}
       data={props.props}
       margin={{
-        top: 5,
+        top: 25,
         right: 30,
         left: 20,
-        bottom: 5,
+        bottom: 0,
       }}
     >
       <CartesianGrid strokeDasharray="6 6" stroke="white" />
