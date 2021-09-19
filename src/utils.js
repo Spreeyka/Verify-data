@@ -37,21 +37,22 @@ export function getAllNumberFromFlattenedJson(json) {
 export function generateDataForChart(data, benfordsValues) {
   if (data) {
     let chartData = {};
-    let number = 1;
-    let max = 9;
+    let digit = 1;
+    let maxDigit = 9;
     for (let j = 0; j < Object.keys(CONSTANTS).length; j++) {
       let chartKey = "Chart" + j;
       let chartConstant = "CHART_" + j + "_CONSTANTS";
-      if (chartKey !== "Chart0") {
-        number = 0;
-        max = 10;
-      }
-
       chartData[chartKey] = [];
 
-      for (let i = 0; i < max; i++) {
+      //for all charts except Chart0 we also need to count digit 0 (since it cannot appear on first position of numbers)
+      if (chartKey !== "Chart0") {
+        digit = 0;
+        maxDigit = 10;
+      }
+
+      for (let i = 0; i < maxDigit; i++) {
         chartData[chartKey].push({
-          number: number++,
+          number: digit++,
           benfordsValue: benfordsValues[chartConstant][i],
           calculatedData: Number(
             (data[j][i] / sumAllNumberOccurances(data[j])) * 100
@@ -103,6 +104,6 @@ export function populateOccurrancesOfNumbersArray(numberValues) {
     occurrancesArray.push(calculateOccurancesOfDataNumbers(numberValues, i));
   }
   occurrancesArray.push(calculateConditionalOccurances_1_x(numberValues));
-  console.log("occurrancesArray :>> ", occurrancesArray);
+  //console.log("occurrancesArray :>> ", occurrancesArray);
   return occurrancesArray;
 }

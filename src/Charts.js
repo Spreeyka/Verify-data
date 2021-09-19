@@ -49,12 +49,10 @@ const Charts = (props) => {
   }
 
   return (
-    //tutaj dać mapowanie chartów
     <div className="chart-container">
-      <Chart props={chartsData.Chart0}></Chart>
-      <Chart props={chartsData.Chart1}></Chart>
-      <Chart props={chartsData.Chart2}></Chart>
-      <Chart props={chartsData.Chart3}></Chart>
+      {Object.values(chartsData).map((value, index) => (
+        <Chart key={index} props={value}></Chart>
+      ))}
     </div>
   );
 
