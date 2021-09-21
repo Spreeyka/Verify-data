@@ -25,7 +25,7 @@ export function getAllNumberFromFlattenedJson(json) {
   for (const key in flattenedJson) {
     if (Object.hasOwnProperty.call(flattenedJson, key)) {
       element = flattenedJson[key];
-      if (element.match(/^[1-9]+[0-9]*.?[0-9]*$/) && element.length > 1) {
+      if (element.match(/^[1-9]+[0-9]*,?/) && element.length > 1) {
         //znaleźć lepsze JSON API tak żeby nie były to dane procentowe i wtedy poprawić tę funkcję
         numberValues.push(element);
       }
@@ -49,7 +49,6 @@ export function generateDataForChart(data, benfordsValues) {
         digit = 0;
         maxDigit = 10;
       }
-
       for (let i = 0; i < maxDigit; i++) {
         chartData[chartKey].push({
           number: digit++,
@@ -59,6 +58,9 @@ export function generateDataForChart(data, benfordsValues) {
           ),
         });
       }
+      chartData[chartKey].push({
+        numberOfAnalysedData: sumAllNumberOccurances(data[j]),
+      });
     }
     return chartData;
   }
@@ -68,7 +70,7 @@ export function calculateOccurancesOfDataNumbers(data, position) {
   let occurancesOfNumbersArray = new Array(10);
   occurancesOfNumbersArray.fill(0);
   for (let stringValue of data) {
-    stringValue = stringValue.replace(".", "");
+    stringValue = stringValue.replace(/,{1}[0-9]*/, ""); //dodac obsluge do kropki tez w dwoch miejscach
     if (position === 0)
       occurancesOfNumbersArray[Number(stringValue[position]) - 1] += 1;
     else {
@@ -83,7 +85,7 @@ export function calculateConditionalOccurances_1_x(data) {
   occurancesOfNumbersArray.fill(0);
   data.forEach((e) => {
     if (e[0] === "1") {
-      e.replace(".", "");
+      e.replace(/,{1}[0-9]*/, ""); //chyba git??
       occurancesOfNumbersArray[e[1]]++;
     }
   });
@@ -104,6 +106,5 @@ export function populateOccurrancesOfNumbersArray(numberValues) {
     occurrancesArray.push(calculateOccurancesOfDataNumbers(numberValues, i));
   }
   occurrancesArray.push(calculateConditionalOccurances_1_x(numberValues));
-  //console.log("occurrancesArray :>> ", occurrancesArray);
   return occurrancesArray;
 }

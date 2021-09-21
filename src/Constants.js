@@ -1,7 +1,7 @@
 // This constants represents ideal number occurranes percentages in given data-set
 // CHART_0_CONSTANTS - % of numbers from 1-9 occuring on first significant position
 // CHART_1_CONSTANTS - % of numbers from 0-9 occuring on second significant position
-// CHART_2_CONSTANTS - % of numbers from 0-9 occuring on last significant position
+// CHART_2_CONSTANTS - % of numbers from 0-9 occuring on third significant position
 // CHART_3_CONSTANTS - % of numbers from 0-9 occuring on second significant position, where first significant position number equals 1
 
 export const CONSTANTS = {

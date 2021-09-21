@@ -17,6 +17,9 @@ const Charts = (props) => {
     localStorage.getItem("chartsData") || {}
   );
   const datasets = importAll(require.context("./data/", false, /\.(json)$/));
+  let res;
+  let numberValues;
+  let occurancesOfNumbers;
 
   useEffect(() => {
     requestData();
@@ -31,9 +34,6 @@ const Charts = (props) => {
   }, [chartsData]);
 
   async function requestData() {
-    let res;
-    let numberValues;
-
     if (props.type === "data") {
       res = datasets[id - 1];
       setData(res);
@@ -44,19 +44,21 @@ const Charts = (props) => {
       setData(json);
       numberValues = getAllNumberFromFlattenedJson(json);
     }
-    let occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
+    occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
     setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
   }
 
   return (
     <div className="chart-container">
       {Object.values(chartsData).map((value, index) => (
-        <Chart key={index} props={value}></Chart>
+        <Chart
+          key={index}
+          data={value.slice(0, -1)}
+          numberOfAnalysedData={value[value.length - 1].numberOfAnalysedData}
+        ></Chart>
       ))}
     </div>
   );
-
-  //p className="data">{console.log(chartsData)}</>;
 };
 
 export default Charts;

@@ -1,10 +1,6 @@
 import "./App.css";
-import { Table } from "./Table";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Charts from "./Charts";
-import { getDatasetNames } from "./utils";
-import { useEffect, useState } from "react";
-import { API } from "./Constants";
 import { Header } from "./Header";
 import { Imports } from "./Imports";
 import { Tables } from "./Tables";
