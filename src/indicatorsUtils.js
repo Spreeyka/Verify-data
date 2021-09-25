@@ -52,7 +52,7 @@ export function calculate_D_Parameter(empirical_F_Array, theoretical_F_Array) {
       Math.abs(empirical_F_Array[i] - theoretical_F_Array[i])
     );
   }
-  return Math.max(ArrayOfDifferences);
+  return Math.max(...ArrayOfDifferences);
 }
 
 export function calculateChiSquareTest(
@@ -63,8 +63,7 @@ export function calculateChiSquareTest(
   let sum = 0;
   for (let i = 0; i < empirical_C_parameter_Array.length; i++) {
     sum +=
-      ((empirical_C_parameter_Array[i] - theoretical_C_parameter_Array[i]) ^
-        2) /
+      (empirical_C_parameter_Array[i] - theoretical_C_parameter_Array[i]) ** 2 /
       theoretical_C_parameter_Array[i];
   }
 
@@ -79,19 +78,22 @@ export function calculate_Z_Test(
   let z_Test_Array = [];
   for (let i = 0; i < pEmpiricalArray.length; i++) {
     z_Test_Array.push(
-      (pEmpiricalArray[i] - pTheoreticalArray[i]) /
+      (
+        (pEmpiricalArray[i] - pTheoreticalArray[i]) /
         Math.sqrt(
           (pTheoreticalArray[i] * (1 - pTheoreticalArray[i])) / sampleSize
         )
+      ).toFixed(2)
     );
   }
   return z_Test_Array;
 }
 
 export function calculateKolmogorovSmirnovTest(d_Parameter, sampleSize) {
-  return d_Parameter * Math.sqrt((sampleSize ^ 2) / (2 * sampleSize));
+  return d_Parameter * Math.sqrt(sampleSize ** 2 / (2 * sampleSize));
 }
 
+//does not work for D3 test (because theoretical C parameters are exactly the same)
 export function calculateCorrelationCoefficient(
   empiricalOccurrancesOfNumbersArray,
   theoreticalOccurancesOfNumbersArray
@@ -106,6 +108,7 @@ export function calculateCorrelationCoefficient(
     empiricalMeanAverage += empiricalOccurrancesOfNumbersArray[i];
     theoreticalMeanAverage += theoreticalOccurancesOfNumbersArray[i];
   }
+
   empiricalMeanAverage /= empiricalOccurrancesOfNumbersArray.length;
   theoreticalMeanAverage /= theoreticalOccurancesOfNumbersArray.length;
 
@@ -115,13 +118,12 @@ export function calculateCorrelationCoefficient(
       (theoreticalOccurancesOfNumbersArray[i] - theoreticalMeanAverage);
   }
   for (let i = 0; i < empiricalOccurrancesOfNumbersArray.length; i++) {
-    sum2 += (empiricalOccurrancesOfNumbersArray[i] - empiricalMeanAverage) ^ 2;
+    sum2 += (empiricalOccurrancesOfNumbersArray[i] - empiricalMeanAverage) ** 2;
   }
   for (let i = 0; i < theoreticalOccurancesOfNumbersArray.length; i++) {
     sum3 +=
-      (theoreticalOccurancesOfNumbersArray[i] - theoreticalMeanAverage) ^ 2;
+      (theoreticalOccurancesOfNumbersArray[i] - theoreticalMeanAverage) ** 2;
   }
-
   return sum1 / Math.sqrt(sum2 * sum3);
 }
 
@@ -147,7 +149,7 @@ export function calculate_M2_Test(
   let sum = 0;
   for (let i = 0; i < empirical_C_parameter_Array.length; i++) {
     sum +=
-      (empirical_C_parameter_Array[i] - theoretical_C_parameter_Array[i]) ^ 2;
+      (empirical_C_parameter_Array[i] - theoretical_C_parameter_Array[i]) ** 2;
   }
 
   return (1 / empirical_C_parameter_Array.length) * Math.sqrt(sum);
@@ -160,7 +162,7 @@ export function calculate_M3_Test(
   let sum = 0;
   for (let i = 0; i < empirical_C_parameter_Array.length; i++) {
     sum +=
-      (empirical_C_parameter_Array[i] - theoretical_C_parameter_Array[i]) ^ 2;
+      (empirical_C_parameter_Array[i] - theoretical_C_parameter_Array[i]) ** 2;
   }
 
   return Math.sqrt(sum / empirical_C_parameter_Array.length);

@@ -9,6 +9,7 @@ import {
   generateDataForChart,
   importAll,
 } from "./utils";
+import { Indicators } from "./Indicators";
 
 const Charts = (props) => {
   const { id } = useParams();
@@ -16,6 +17,7 @@ const Charts = (props) => {
   const [chartsData, setChartsData] = useState(
     localStorage.getItem("chartsData") || {}
   );
+
   const datasets = importAll(require.context("./data/", false, /\.(json)$/));
   let res;
   let numberValues;
@@ -49,13 +51,18 @@ const Charts = (props) => {
   }
 
   return (
-    <div className="chart-container">
+    <div className="charts-container">
       {Object.values(chartsData).map((value, index) => (
-        <Chart
-          key={index}
-          data={value.slice(0, -1)}
-          numberOfAnalysedData={value[value.length - 1].numberOfAnalysedData}
-        ></Chart>
+        <div className="chart-container">
+          <Chart
+            key={index}
+            data={value.slice(0, -1)}
+            numberOfAnalysedData={value[value.length - 1].numberOfAnalysedData}
+          ></Chart>
+          <div>
+            <Indicators data={value} occur={occurancesOfNumbers}></Indicators>
+          </div>
+        </div>
       ))}
     </div>
   );
