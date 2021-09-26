@@ -4,6 +4,8 @@ import Charts from "./Charts";
 import { Header } from "./Header";
 import { Imports } from "./Imports";
 import { Tables } from "./Tables";
+import { Button } from "./Button";
+import { Modal } from "./DataModal";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
             <Tables></Tables>
           </div>
         </Switch>
+        <Button></Button>
       </Router>
     </div>
   );
