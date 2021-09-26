@@ -26,7 +26,6 @@ export function getAllNumberFromFlattenedJson(json) {
     if (Object.hasOwnProperty.call(flattenedJson, key)) {
       element = flattenedJson[key];
       if (element.match(/^[1-9]+[0-9]*,?/) && element.length > 1) {
-        //znaleźć lepsze JSON API tak żeby nie były to dane procentowe i wtedy poprawić tę funkcję
         numberValues.push(element);
       }
     }

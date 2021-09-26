@@ -8,12 +8,16 @@ import {
   populateOccurrancesOfNumbersArray,
   generateDataForChart,
   importAll,
+  flattenJson,
 } from "./utils";
 import { Indicators } from "./Indicators";
 
 const Charts = (props) => {
+  //console.log("props location:>> ", props.location.formData);
   const { id } = useParams();
-  const [data, setData] = useState(localStorage.getItem("data") || []);
+  const [data, setData] = useState(
+    localStorage.getItem("data") || props.location?.formData || []
+  );
   const [chartsData, setChartsData] = useState(
     localStorage.getItem("chartsData") || {}
   );
@@ -39,13 +43,22 @@ const Charts = (props) => {
     if (props.type === "data") {
       res = datasets[id - 1];
       setData(res);
+      console.log("typ daty z dataplik :>> ", typeof data);
+
       numberValues = getAllNumberFromFlattenedJson(res);
     } else if (props.type === "api") {
       res = await fetch(API[id - 1]);
       const json = await res.json();
+
       setData(json);
+      console.log("typ daty z API :>> ", typeof data);
+      numberValues = getAllNumberFromFlattenedJson(json);
+    } else if (props.location.type === "custom") {
+      setData(props.location.data);
+      const json = JSON.parse(data);
       numberValues = getAllNumberFromFlattenedJson(json);
     }
+
     occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
     setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
   }
@@ -53,9 +66,8 @@ const Charts = (props) => {
   return (
     <div className="charts-container">
       {Object.values(chartsData).map((value, index) => (
-        <div className="chart-container">
+        <div key={index} className="chart-container">
           <Chart
-            key={index}
             data={value.slice(0, -1)}
             numberOfAnalysedData={value[value.length - 1].numberOfAnalysedData}
           ></Chart>
