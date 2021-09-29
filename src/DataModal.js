@@ -56,7 +56,7 @@ export function DataModal(props) {
               onChange={(e) => {
                 handleChange(e);
               }}
-              style={{ height: "30vw" }}
+              style={{ height: "33vw" }}
             />
           </Form.Group>
         </Form>

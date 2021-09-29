@@ -73,17 +73,6 @@ td {
   font-size: 3.2rem;
 }
 
-.big-container {
-  margin: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  display: flex;
-  gap: 2rem;
-  flex-flow: column nowrap;
-  margin-top: 2rem;
-  align-items: center;
-}
-
 .App-header {
   font-family: "Josefin Slab", serif;
   text-align: center;
@@ -102,7 +91,15 @@ td {
   height: auto;
 }
 
-.tables-div {
+.big-container {
+  margin: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-flow: column nowrap;
+  margin-top: 2rem;
+  align-items: center;
 }
 
 .table-container {
@@ -119,11 +116,22 @@ td {
   border-radius: 2rem;
 }
 
+.table-container2 .table {
+}
+
 .btn {
   margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 1200px) {
+  .tables-div {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .table-container2 {
+    height: max-content;
+  }
 }
 
 @media only screen and (min-width: 600px) {
