@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="App-header">
-      Benford's law
+      <p className="website-title">Benford's law</p>
       <div className="description">
         <div>
           <p>The law of anomalous numbers, or the first-digit law</p>
