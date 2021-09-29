@@ -5,11 +5,13 @@ import { Header } from "./Header";
 import { Imports } from "./Imports";
 import { Tables } from "./Tables";
 import { Button } from "./Button";
+import MyImage from "./images/benek.png";
 
 function App() {
   return (
     <div className="App">
       <Imports></Imports>
+
       <Router>
         <Switch>
           <Route path="/data/charts/:id">
@@ -20,11 +22,12 @@ function App() {
           </Route>
           <Route component={Charts} path="/custom/charts"></Route>
           <div className="main-container">
+            <img src={MyImage} alt="portrait" />
             <Header></Header>
             <Tables></Tables>
+            <Button></Button>
           </div>
         </Switch>
-        <Button></Button>
       </Router>
     </div>
   );

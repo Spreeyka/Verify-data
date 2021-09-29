@@ -8,19 +8,12 @@ import {
   populateOccurrancesOfNumbersArray,
   generateDataForChart,
   importAll,
-  flattenJson,
 } from "./utils";
 import { Indicators } from "./Indicators";
 
 const Charts = (props) => {
-  //console.log("props location:>> ", props.location.formData);
   const { id } = useParams();
-  const [data, setData] = useState(
-    localStorage.getItem("data") || props.location?.formData || []
-  );
-  const [chartsData, setChartsData] = useState(
-    localStorage.getItem("chartsData") || {}
-  );
+  const [chartsData, setChartsData] = useState({});
 
   const datasets = importAll(require.context("./data/", false, /\.(json)$/));
   let res;
@@ -31,34 +24,18 @@ const Charts = (props) => {
     requestData();
   }, []);
 
-  useEffect(() => {
-    window.sessionStorage.setItem("data", JSON.stringify(data));
-  }, [data]);
-
-  useEffect(() => {
-    window.sessionStorage.setItem("chartsData", JSON.stringify(chartsData));
-  }, [chartsData]);
-
   async function requestData() {
     if (props.type === "data") {
       res = datasets[id - 1];
-      setData(res);
-      console.log("typ daty z dataplik :>> ", typeof data);
-
       numberValues = getAllNumberFromFlattenedJson(res);
     } else if (props.type === "api") {
       res = await fetch(API[id - 1]);
       const json = await res.json();
-
-      setData(json);
-      console.log("typ daty z API :>> ", typeof data);
       numberValues = getAllNumberFromFlattenedJson(json);
-    } else if (props.location.type === "custom") {
-      setData(props.location.data);
-      const json = JSON.parse(data);
+    } else {
+      const json = JSON.parse(localStorage.getItem("data"));
       numberValues = getAllNumberFromFlattenedJson(json);
     }
-
     occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
     setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
   }

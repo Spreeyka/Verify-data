@@ -87,15 +87,15 @@ export function Indicators({ data }) {
 
   return (
     <div className="indicator-container">
-      <h5>Z test: {Z_Test.join(" ")}</h5>
-      <h5>Kolmogorov-Smirnov test: {kolmogorovSmirnovTest.toFixed(2)}</h5>
-      <h5 className="correlation-header">
+      <p>Z test: {Z_Test.join(" ")}</p>
+      <p>Kolmogorov-Smirnov test: {kolmogorovSmirnovTest.toFixed(2)}</p>
+      <p className="correlation-header">
         Correlation coefficient: {correlationCoefficient.toFixed(2)}
-      </h5>
-      <h5>Chi square test: {chiSquareTest.toFixed(2)}</h5>
-      <h5>M1 test: {M1_Test.toFixed(2)}</h5>
-      <h5>M2 test: {M2_Test.toFixed(2)}</h5>
-      <h5>M3 test: {M3_Test.toFixed(2)}</h5>
+      </p>
+      <p>Chi square test: {chiSquareTest.toFixed(2)}</p>
+      <p>M1 test: {M1_Test.toFixed(2)}</p>
+      <p>M2 test: {M2_Test.toFixed(2)}</p>
+      <p>M3 test: {M3_Test.toFixed(2)}</p>
     </div>
   );
 }

@@ -1,15 +1,39 @@
 import Button from "react-bootstrap/Button";
 import { Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Charts from "./Charts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function DataModal(props) {
   const [formData, setFormData] = useState("");
+  let chartsData = {};
 
   function handleChange(e) {
     setFormData(e.target.value);
+    localStorage.setItem("data", e.target.value);
   }
+
+  function handleErrorJson() {
+    if (document.querySelector(".error-info")) {
+      document.querySelector(".error-info").style.visibility = "visible";
+      document.querySelector(".form-control").style.boxShadow =
+        "0px 0px 0px 0.3rem red";
+    }
+  }
+
+  function handleCorrectJson() {
+    document.querySelector(".form-control").style.boxShadow =
+      "0px 0px 0px 0.3rem green";
+    document.querySelector(".error-info").style.visibility = "hidden";
+  }
+
+  useEffect(() => {
+    try {
+      JSON.parse(formData);
+      handleCorrectJson();
+    } catch (error) {
+      handleErrorJson();
+    }
+  }, [formData]);
 
   return (
     <Modal
@@ -25,23 +49,28 @@ export function DataModal(props) {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          {/* Jak przekazać dane z text area do Charts component? */}
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Control
               as="textarea"
               rows={3}
-              onChange={(e) => handleChange(e)}
+              onChange={(e) => {
+                handleChange(e);
+              }}
               style={{ height: "30vw" }}
             />
           </Form.Group>
         </Form>
       </Modal.Body>
+      <p className="error-info">
+        Incorrect format. Make sure to insert data in JSON
+      </p>
       <Modal.Footer>
         <Link
           to={{
             pathname: "/custom/charts",
             type: "custom",
             formData,
+            chartsData,
           }}
         >
           <Button variant="dark" onClick={props.onHide}>
