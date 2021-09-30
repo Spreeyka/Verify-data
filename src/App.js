@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <Imports></Imports>
-
       <Router>
         <Switch>
           <Route path="/data/charts/:id">

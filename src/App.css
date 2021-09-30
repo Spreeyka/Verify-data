@@ -19,6 +19,17 @@
   color: white;
 }
 
+.error-message {
+  font-size: 2.3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
 /* .recharts-legend-wrapper {
   bottom: -1rem !important;
 } */

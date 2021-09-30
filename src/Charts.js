@@ -10,10 +10,12 @@ import {
   importAll,
 } from "./utils";
 import { Indicators } from "./Indicators";
+import { ErrorPage } from "./ErrorPage";
 
 const Charts = (props) => {
   const { id } = useParams();
   const [chartsData, setChartsData] = useState({});
+  const [error, setError] = useState(false);
 
   const datasets = importAll(require.context("./data/", false, /\.(json)$/));
   let res;
@@ -25,22 +27,26 @@ const Charts = (props) => {
   }, []);
 
   async function requestData() {
-    if (props.type === "data") {
-      res = datasets[id - 1];
-      numberValues = getAllNumberFromFlattenedJson(res);
-    } else if (props.type === "api") {
-      res = await fetch(API[id - 1]);
-      const json = await res.json();
-      numberValues = getAllNumberFromFlattenedJson(json);
-    } else {
-      const json = JSON.parse(localStorage.getItem("data"));
-      numberValues = getAllNumberFromFlattenedJson(json);
+    try {
+      if (props.type === "data") {
+        res = datasets[id - 1];
+        numberValues = getAllNumberFromFlattenedJson(res);
+      } else if (props.type === "api") {
+        res = await fetch(API[id - 1]);
+        const json = await res.json();
+        numberValues = getAllNumberFromFlattenedJson(json);
+      } else {
+        const json = JSON.parse(localStorage.getItem("data"));
+        numberValues = getAllNumberFromFlattenedJson(json);
+      }
+      occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
+      setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
+    } catch (error) {
+      setError(true);
     }
-    occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
-    setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
   }
 
-  return (
+  return error === false ? (
     <div className="charts-container">
       {Object.values(chartsData).map((value, index) => (
         <div key={index} className="chart-container">
@@ -54,6 +60,8 @@ const Charts = (props) => {
         </div>
       ))}
     </div>
+  ) : (
+    <ErrorPage></ErrorPage>
   );
 };
 
