@@ -22,10 +22,10 @@ function App() {
           <Route component={Charts} path="/custom/charts"></Route>
           <div className="main-container">
             <div className="big-container">
-              <img src={MyImage} alt="Benford" className="responsive-image" />
               <Header></Header>
               <Tables></Tables>
               <Button></Button>
+              <img src={MyImage} alt="Benford" className="responsive-image" />
             </div>
           </div>
         </Switch>

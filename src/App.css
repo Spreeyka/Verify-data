@@ -30,9 +30,9 @@
   min-height: 100vh;
 }
 
-/* .recharts-legend-wrapper {
-  bottom: -1rem !important;
-} */
+.recharts-legend-wrapper {
+  bottom: 1rem !important;
+}
 
 thead,
 td {
@@ -127,7 +127,14 @@ td {
   border-radius: 2rem;
 }
 
-.table-container2 .table {
+.material-icons.green {
+  color: #1eff00;
+  font-size: 1.5rem;
+}
+
+.material-icons.red {
+  color: #ff0000;
+  font-size: 1.5rem;
 }
 
 .btn {
