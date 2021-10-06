@@ -1,18 +1,13 @@
-import {
-  CONSTANTS,
-  KOLMOGOROV_SMIRNOV_CRITICAL_VALUES,
-  Z_TEST_CRITICAL_VALUES,
-  CHI_SQUARE_CRITICAL_VALUES,
-  CORRELATION_CRITICAL_VALUES,
-} from "./Constants";
-
-export function IndicatorWithIcon({ value, critValue, operator }) {
+export function FeedbackIcon({ value, critValue, operator }) {
   let operators = {
     ">=": function (a, b) {
       return a >= b;
     },
     "<": function (a, b) {
       return a < b;
+    },
+    ">": function (a, b) {
+      return a > b;
     },
   };
 

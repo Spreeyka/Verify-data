@@ -52,16 +52,6 @@ td {
   font-size: 1.7rem;
 }
 
-.indicator-container p {
-  line-height: 1;
-}
-
-.indicator-container {
-  color: white;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
 .chart-container:nth-child(3) h5.correlation-header {
   display: none;
   visibility: hidden;
@@ -127,14 +117,26 @@ td {
   border-radius: 2rem;
 }
 
+.indicator-container p {
+  margin-bottom: 0.6rem;
+}
+
+.indicator-container {
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
 .material-icons.green {
   color: #1eff00;
   font-size: 1.5rem;
+  margin-left: 0.3rem;
 }
 
 .material-icons.red {
   color: #ff0000;
   font-size: 1.5rem;
+  margin: 0 0 0 0.3rem;
 }
 
 .btn {

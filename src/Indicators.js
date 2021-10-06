@@ -1,11 +1,4 @@
 import {
-  CONSTANTS,
-  KOLMOGOROV_SMIRNOV_CRITICAL_VALUES,
-  Z_TEST_CRITICAL_VALUES,
-  CHI_SQUARE_CRITICAL_VALUES,
-  CORRELATION_CRITICAL_VALUES,
-} from "./Constants";
-import {
   calculate_Theoretical_Amounts_Array,
   calculate_C_Parameter_Array,
   calculateChiSquareTest,
@@ -19,7 +12,11 @@ import {
   calculate_P_Parameter_Array,
   calculate_Z_Test,
 } from "./indicatorsUtils";
-import { IndicatorWithIcon } from "./IndicatorWithIcon";
+import { KolmogorovSmirnovIndicator } from "./IndicatorsWithIcons/KolmogorovSmirnovIndicator";
+import { CorrelationCoefficientIndicator } from "./IndicatorsWithIcons/CorrelationCoefficientIndicator";
+import { ChiSquareIndicator } from "./IndicatorsWithIcons/ChiSquareIndicator";
+import { ZTestIndicator } from "./IndicatorsWithIcons/ZTestIndicator";
+import { MTests } from "./IndicatorsWithIcons/MTests";
 
 export function Indicators({ data, index }) {
   let sampleSize = data[data.length - 1].numberOfAnalysedData;
@@ -97,49 +94,19 @@ export function Indicators({ data, index }) {
 
   return (
     <div className="indicator-container">
-      <p>
-        Z test: {Z_Test.join(" ")}
-        <IndicatorWithIcon
-          value={
-            Z_Test.filter((x) => Math.abs(x) > Z_TEST_CRITICAL_VALUES.VALUES[1])
-              .length
-          }
-          critValue={5}
-          operator={`>=`}
-        ></IndicatorWithIcon>
-      </p>
-
-      <p>
-        Kolmogorov-Smirnov test: {kolmogorovSmirnovTest.toFixed(2)}
-        <IndicatorWithIcon
-          value={kolmogorovSmirnovTest}
-          critValue={KOLMOGOROV_SMIRNOV_CRITICAL_VALUES.VALUES[1]}
-          operator={`>=`}
-        ></IndicatorWithIcon>
-      </p>
-      {index !== 2 ? (
-        <p className="correlation-header">
-          Correlation coefficient: {correlationCoefficient.toFixed(2)}
-          <IndicatorWithIcon
-            value={Math.abs(correlationCoefficient)}
-            critValue={CORRELATION_CRITICAL_VALUES.VALUES[2]}
-            operator={`<`}
-          ></IndicatorWithIcon>
-        </p>
-      ) : null}
-
-      <p>
-        Chi square test: {chiSquareTest.toFixed(2)}
-        {console.log("wynik", CHI_SQUARE_CRITICAL_VALUES[chartConstant][2])}
-        <IndicatorWithIcon
-          value={chiSquareTest}
-          critValue={CHI_SQUARE_CRITICAL_VALUES[chartConstant][2]}
-          operator={`>=`}
-        ></IndicatorWithIcon>
-      </p>
-      <p>M1 test: {M1_Test.toFixed(2)}</p>
-      <p>M2 test: {M2_Test.toFixed(2)}</p>
-      <p>M3 test: {M3_Test.toFixed(2)}</p>
+      <ZTestIndicator value={Z_Test}></ZTestIndicator>
+      <KolmogorovSmirnovIndicator
+        value={kolmogorovSmirnovTest}
+      ></KolmogorovSmirnovIndicator>
+      <CorrelationCoefficientIndicator
+        value={correlationCoefficient}
+        index={index}
+      ></CorrelationCoefficientIndicator>
+      <ChiSquareIndicator
+        value={chiSquareTest}
+        chartConstant={chartConstant}
+      ></ChiSquareIndicator>
+      <MTests M1_Test={M1_Test} M2_Test={M2_Test} M3_Test={M3_Test}></MTests>
     </div>
   );
 }
