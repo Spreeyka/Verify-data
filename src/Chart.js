@@ -9,17 +9,18 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { ChartDescription } from "./ChartDescription";
 
-export default function Chart(props) {
+export default function Chart({ data, numberOfAnalysedData }) {
   return (
     <div>
-      <div className="chart-header">
-        <p>{`Number of analysed data: ${props.numberOfAnalysedData}`}</p>
-      </div>
+      <ChartDescription
+        numberOfAnalysedData={numberOfAnalysedData}
+      ></ChartDescription>
       <div>
         <ResponsiveContainer aspect={1.5} width="99%" height="100%">
           <LineChart
-            data={props.data}
+            data={data}
             margin={{
               top: 15,
               right: 30,

@@ -139,6 +139,17 @@ td {
   margin: 0 0 0 0.3rem;
 }
 
+.material-icons.notification {
+  font-size: 2rem;
+  margin: 0 0 0 0.5rem;
+}
+
+.sample-warning {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 .btn {
   margin-bottom: 1rem;
 }

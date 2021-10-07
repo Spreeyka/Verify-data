@@ -55,9 +55,6 @@ const Charts = (props) => {
             numberOfAnalysedData={value[value.length - 1].numberOfAnalysedData}
           ></Chart>
           <div>
-            {console.log("value", value)}
-            {console.log("index", index)}
-            {console.log("occur", occurancesOfNumbers)}
             <Indicators
               data={value}
               occur={occurancesOfNumbers}
