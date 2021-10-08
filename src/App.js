@@ -5,7 +5,7 @@ import { Header } from "./Header";
 import { Imports } from "./Imports";
 import { Tables } from "./Tables";
 import { Button } from "./Button";
-import MyImage from "./images/benek2.png";
+import { Sidebar } from "./sidebar/Sidebar";
 
 function App() {
   return (
@@ -21,11 +21,11 @@ function App() {
           </Route>
           <Route component={Charts} path="/custom/charts"></Route>
           <div className="main-container">
+            <Sidebar />
             <div className="big-container">
               <Header></Header>
               <Tables></Tables>
               <Button></Button>
-              <img src={MyImage} alt="Benford" className="responsive-image" />
             </div>
           </div>
         </Switch>
