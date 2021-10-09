@@ -256,6 +256,7 @@ span {
   .charts-container {
     display: grid;
     grid-template-columns: 1fr;
+    margin-bottom: 0.5rem;
   }
 
   .chart-container {

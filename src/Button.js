@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DataModal } from "./DataModal";
 
-export function Button() {
+export function Button({ content }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ export function Button() {
         type="button"
         className="btn btn-outline-light btn-lg"
       >
-        Check your own data
+        {content}
       </button>
     </div>
   );

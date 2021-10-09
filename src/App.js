@@ -25,7 +25,7 @@ function App() {
             <div className="big-container">
               <Header></Header>
               <Tables></Tables>
-              <Button></Button>
+              <Button content="Check your own data"></Button>
             </div>
           </div>
         </Switch>

@@ -22,7 +22,13 @@ export function Sidebar() {
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path}>
+                  <Link
+                    className="sidebar-link"
+                    to={{
+                      pathname: item.path,
+                    }}
+                    target="_blank"
+                  >
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>

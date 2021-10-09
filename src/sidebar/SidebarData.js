@@ -1,43 +1,41 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
+import * as GiIcons from "react-icons/gi";
+import * as BsIcons from "react-icons/bs";
+import * as FcIcons from "react-icons/fc";
+import * as AiIcons from "react-icons/ai";
 
 export const SidebarData = [
   {
-    title: "Home",
-    path: "/",
-    icon: <AiIcons.AiFillHome />,
+    title: "When does it work?",
+    path: "https://en.wikipedia.org/wiki/Benford%27s_law#Criteria_for_distributions_expected_and_not_expected_to_obey_Benford's_law",
+    icon: <FaIcons.FaQuestion />,
     cName: "nav-text",
   },
   {
-    title: "Reports",
-    path: "/reports",
+    title: "Definition",
+    path: "https://en.wikipedia.org/wiki/Benford%27s_law#Definition",
+    icon: <GiIcons.GiSpectacleLenses />,
+    cName: "nav-text",
+  },
+  {
+    title: "Applications",
+    path: "https://en.wikipedia.org/wiki/Benford%27s_law#Applications",
     icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
   },
+
   {
-    title: "Products",
-    path: "/products",
-    icon: <FaIcons.FaCartPlus />,
+    title: "Explanations",
+    path: "https://en.wikipedia.org/wiki/Benford%27s_law#Explanations",
+    icon: <BsIcons.BsLightbulbFill />,
     cName: "nav-text",
   },
   {
-    title: "Team",
-    path: "/team",
-    icon: <IoIcons.IoMdPeople />,
-    cName: "nav-text",
-  },
-  {
-    title: "Messages",
-    path: "/messages",
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: "nav-text",
-  },
-  {
-    title: "Support",
-    path: "/support",
-    icon: <IoIcons.IoMdHelpCircle />,
+    title: "About law (PL)",
+    path: "https://pl.wikipedia.org/wiki/Rozk%C5%82ad_Benforda",
+    icon: <AiIcons.AiFillFund />,
     cName: "nav-text",
   },
 ];

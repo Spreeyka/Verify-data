@@ -11,11 +11,14 @@ import {
 } from "./utils";
 import { Indicators } from "./Indicators";
 import { ErrorPage } from "./ErrorPage";
+import { BackButton } from "./BackButton";
+import { Link } from "react-router-dom";
 
 const Charts = (props) => {
   const { id } = useParams();
   const [chartsData, setChartsData] = useState({});
   const [error, setError] = useState(false);
+  const [status, setStatus] = useState("loading");
 
   const datasets = importAll(require.context("./data/", false, /\.(json)$/));
   let res;
@@ -41,29 +44,41 @@ const Charts = (props) => {
       }
       occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
       setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
+      setStatus("loaded");
     } catch (error) {
       setError(true);
     }
   }
 
   return error === false ? (
-    <div className="charts-container">
-      {Object.values(chartsData).map((value, index) => (
-        <div key={index} className="chart-container">
-          <Chart
-            data={value.slice(0, -1)}
-            numberOfAnalysedData={value[value.length - 1].numberOfAnalysedData}
-          ></Chart>
-          <div>
-            <Indicators
-              data={value}
-              occur={occurancesOfNumbers}
-              index={index}
-            ></Indicators>
+    <>
+      <div className="charts-container">
+        {Object.values(chartsData).map((value, index) => (
+          <div key={index} className="chart-container">
+            <Chart
+              data={value.slice(0, -1)}
+              numberOfAnalysedData={
+                value[value.length - 1].numberOfAnalysedData
+              }
+            ></Chart>
+            <div>
+              <Indicators
+                data={value}
+                occur={occurancesOfNumbers}
+                index={index}
+              ></Indicators>
+            </div>
           </div>
+        ))}
+      </div>
+      {status === "loaded" ? (
+        <div className="button-container">
+          <Link style={{ textDecoration: "none" }} to="/">
+            <BackButton content="◄◄◄ go back to homepage"></BackButton>
+          </Link>
         </div>
-      ))}
-    </div>
+      ) : null}
+    </>
   ) : (
     <ErrorPage></ErrorPage>
   );
