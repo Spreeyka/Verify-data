@@ -27,7 +27,7 @@ const Charts = (props) => {
 
   useEffect(() => {
     requestData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function requestData() {
     try {
