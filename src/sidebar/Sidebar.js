@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import MyImage from "../images/benek2.png";
 
 export function Sidebar() {
-  const [sidebar, setSidebar] = useState(false);
+  const [hiddenSidebar, setHiddenSidebar] = useState(true);
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setHiddenSidebar(!hiddenSidebar);
 
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <Link to="#" className="menu-bars">
+          <FaIcons.FaBars onClick={showSidebar} />
+        </Link>
+        <nav className={hiddenSidebar ? "nav-menu hidden" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li>
               <img src={MyImage} alt="Benford" className="responsive-image" />

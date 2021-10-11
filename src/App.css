@@ -100,7 +100,6 @@ td {
 }
 
 .big-container {
-  width: calc(85% - 1rem);
   margin: 2rem 1rem 0 1rem;
   display: flex;
   gap: 1rem;
@@ -159,36 +158,12 @@ td {
   margin-bottom: 1rem;
 }
 
-.menu-bars {
-  font-size: 2rem;
-  background: none;
-}
-
-.nav-menu {
-  background-color: #343a4096;
-  width: 15vw;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  margin-left: auto;
-  left: 85%;
-  /* transition: 850ms; */
-}
-
-/* .nav-menu.active {
-  left: 0;
-  transition: 350ms;
-} */
-
 .nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
   padding: 8px 0px 8px 16px;
-  list-style: none;
+  list-style-type: none;
   height: 60px;
 }
 
@@ -226,30 +201,46 @@ li a:hover {
 .nav-menu-items {
   width: 100%;
   padding: 0;
+  list-style: none;
 }
 
-/* .navbar-toggle {
+.navbar-toggle {
   background-color: #060b26;
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: start;
   align-items: center;
-} */
+}
 
 span {
   margin-left: 16px;
 }
 
-@media only screen and (min-width: 1200px) {
-  .tables-div {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-  }
-  .table-container2 {
-    height: max-content;
-  }
+.menu-bars {
+  font-size: 2rem;
+  background: none;
+  position: absolute;
+  right: 3%;
+  position: fixed;
+  z-index: 1;
+}
+
+.nav-menu {
+  background-image: url(./images/tlo5.jpg);
+  width: 55vw;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  margin-left: auto;
+  left: 45%;
+}
+
+.nav-menu.hidden {
+  right: -100%;
 }
 
 @media only screen and (min-width: 600px) {
@@ -265,6 +256,62 @@ span {
   }
   .indicator-container {
     color: white;
+  }
+  .menu-bars {
+    font-size: 2rem;
+    background: none;
+    position: fixed;
+    right: 2.5%;
+    z-index: 1;
+  }
+
+  .nav-menu {
+    width: 30vw;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    margin-left: auto;
+    left: 70%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .tables-div {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .table-container2 {
+    height: max-content;
+  }
+
+  .menu-bars {
+    visibility: hidden;
+    display: none;
+  }
+
+  .nav-menu {
+    background-image: none;
+    background-color: #343a4096;
+    width: 15vw;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    margin-left: auto;
+    left: 85%;
+  }
+  .nav-menu.hidden {
+    right: 0%;
+  }
+
+  .big-container {
+    width: calc(85% - 1rem);
   }
 }
 
