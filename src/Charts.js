@@ -46,7 +46,7 @@ const Charts = (props) => {
       setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));
       setStatus("loaded");
     } catch (error) {
-      console.log("Error has accured", error);
+      console.log("Error has accured \n", error);
       setError(true);
     }
   }

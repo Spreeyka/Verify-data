@@ -24,7 +24,7 @@ export function getAllNumberFromFlattenedJson(json) {
   let flattenedJson = flattenJson(json);
   for (const key in flattenedJson) {
     if (Object.hasOwnProperty.call(flattenedJson, key)) {
-      element = flattenedJson[key];
+      element = String(flattenedJson[key]);
       if (element.match(/^[1-9]+[0-9]*,?/) && element.length > 1) {
         numberValues.push(element);
       }
