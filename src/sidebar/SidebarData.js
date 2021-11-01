@@ -5,7 +5,7 @@ import * as GiIcons from "react-icons/gi";
 import * as BsIcons from "react-icons/bs";
 import * as AiIcons from "react-icons/ai";
 
-export const SidebarData = [
+export const SIDEBAR_DATA = [
   {
     title: "When does it work?",
     path: "https://en.wikipedia.org/wiki/Benford%27s_law#Criteria_for_distributions_expected_and_not_expected_to_obey_Benford's_law",

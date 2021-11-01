@@ -1,4 +1,4 @@
-import { Z_TEST_CRITICAL_VALUES } from "../Constants";
+import { Z_TEST_CRITICAL_VALUES } from "../Utils/Constants";
 import { FeedbackIcon } from "../FeedbackIcon";
 
 export function ZTestIndicator({ value }) {

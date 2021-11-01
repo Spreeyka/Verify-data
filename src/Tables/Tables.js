@@ -1,9 +1,9 @@
 import { Table } from "./Table";
-import { API } from "./Constants";
-import { getDatasetNames } from "./utils";
+import { API } from "../Utils/Constants";
+import { getDatasetNames } from "../Utils/utils";
 
 let apiNames = API;
-let datasetNames = getDatasetNames(require.context("./data", false, /json$/));
+let datasetNames = getDatasetNames(require.context("../data", false, /json$/));
 
 export function Tables() {
   return (

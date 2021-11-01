@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "../App.css";
 import { useParams } from "react-router";
 import Chart from "./Chart";
-import { API, CONSTANTS } from "./Constants";
+import { API, CONSTANTS } from "../Utils/Constants";
 import {
   getAllNumberFromFlattenedJson,
   populateOccurrancesOfNumbersArray,
   generateDataForChart,
   importAll,
-} from "./utils";
-import { Indicators } from "./Indicators";
-import { ErrorPage } from "./ErrorPage";
-import { BackButton } from "./BackButton";
+} from "../Utils/utils";
+import { Indicators } from "../Indicators";
+import { ErrorPage } from "../ErrorPage";
+import { BackButton } from "../Buttons/BackButton";
 import { Link } from "react-router-dom";
 
 const Charts = (props) => {
@@ -20,7 +20,7 @@ const Charts = (props) => {
   const [error, setError] = useState(false);
   const [status, setStatus] = useState("loading");
 
-  const datasets = importAll(require.context("./data/", false, /\.(json)$/));
+  const datasets = importAll(require.context("../data/", false, /\.(json)$/));
   let res;
   let numberValues;
   let occurancesOfNumbers;

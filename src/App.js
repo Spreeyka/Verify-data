@@ -1,10 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Charts from "./Charts";
+import Charts from "./Charts/Charts";
 import { Header } from "./Header";
-import { Imports } from "./Imports";
-import { Tables } from "./Tables";
-import { Button } from "./Button";
+import { Imports } from "./Utils/Imports";
+import { Tables } from "./Tables/Tables";
+import { Button } from "./Buttons/Button";
 import { Sidebar } from "./sidebar/Sidebar";
 
 function App() {

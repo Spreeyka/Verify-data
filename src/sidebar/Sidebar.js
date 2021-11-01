@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { SidebarData } from "./SidebarData";
+import { SIDEBAR_DATA } from "./SidebarData";
 import { IconContext } from "react-icons";
 import MyImage from "../images/benek2.png";
 
@@ -21,7 +21,7 @@ export function Sidebar() {
             <li>
               <img src={MyImage} alt="Benford" className="responsive-image" />
             </li>
-            {SidebarData.map((item, index) => {
+            {SIDEBAR_DATA.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link

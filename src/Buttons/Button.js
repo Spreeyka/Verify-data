@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DataModal } from "./DataModal";
+import { DataModal } from "../DataModal";
 
 export function Button({ content }) {
   const [showModal, setShowModal] = useState(false);
