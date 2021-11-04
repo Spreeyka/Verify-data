@@ -39,7 +39,7 @@ export function calculate_F_Parameter_Array(pArray) {
   pArray.forEach((value, index) => {
     if (index === 0) fArray.push(value);
     else {
-      fArray.push(value + pArray[index - 1]);
+      fArray.push(value + pArray[index - 1]); //fixed bug
     }
   });
   return fArray;

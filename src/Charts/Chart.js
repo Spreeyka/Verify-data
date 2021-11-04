@@ -44,7 +44,7 @@ export default function Chart({ data, numberOfAnalysedData }) {
             />
             <Line
               type="monotone"
-              name="API Values"
+              name="Data Values"
               dataKey="calculatedData"
               stroke="red"
               legendType="plainline"
