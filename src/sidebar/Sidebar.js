@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SIDEBAR_DATA } from "./SidebarData";
 import { IconContext } from "react-icons";
-import MyImage from "../images/benek2.png";
+import MyImage from "../images/benek2.webp";
 
 export function Sidebar() {
   const [hiddenSidebar, setHiddenSidebar] = useState(true);
@@ -19,7 +19,13 @@ export function Sidebar() {
         <nav className={hiddenSidebar ? "nav-menu hidden" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li>
-              <img src={MyImage} alt="Benford" className="responsive-image" />
+              <img
+                src={MyImage}
+                width="140"
+                height="165"
+                alt="Benford"
+                className="responsive-image"
+              />
             </li>
             {SIDEBAR_DATA.map((item, index) => {
               return (

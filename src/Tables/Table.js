@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 export function Table(props) {
   let id = 0;
   let { values = [] } = props;
+  const FILE_EXTENSION = ".json".length;
+  const FILE_START = "./".length;
+  const API_EXTENSION = "https://raw.githubusercontent.com/".length;
 
   return (
     <table className="table table-striped">
@@ -22,9 +25,13 @@ export function Table(props) {
               <th scope="row">{++id}</th>
               <td>
                 {value[0] === "." ? (
-                  <Link to={`/data/charts/${id}`}>{value.slice(2, -5)}</Link>
+                  <Link to={`/data/charts/${id}`}>
+                    {value.slice(FILE_START, -FILE_EXTENSION)}
+                  </Link>
                 ) : (
-                  <Link to={`/api/charts/${id}`}>{value}</Link>
+                  <Link to={`/api/charts/${id}`}>
+                    {value.slice(API_EXTENSION, -FILE_EXTENSION)}
+                  </Link>
                 )}
               </td>
             </tr>

@@ -73,7 +73,7 @@ const Charts = (props) => {
         ))}
       </div>
       {status === "loaded" ? (
-        <div className="button-container">
+        <div className="button-container chart-button-container">
           <Link style={{ textDecoration: "none" }} to="/">
             <BackButton content="◄◄◄ go back to homepage"></BackButton>
           </Link>
