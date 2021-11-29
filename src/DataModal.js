@@ -24,6 +24,7 @@ export function DataModal(props) {
     document.querySelector(".form-control").style.boxShadow =
       "0px 0px 0px 0.3rem green";
     document.querySelector(".error-info").style.visibility = "hidden";
+    document.querySelector(".btn-dark").disabled = false;
   }
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export function DataModal(props) {
             chartsData,
           }}
         >
-          <Button variant="dark" onClick={props.onHide}>
+          <Button variant="dark" onClick={props.onHide} disabled>
             Check data
           </Button>
         </Link>

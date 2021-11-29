@@ -76,6 +76,10 @@ td {
   box-shadow: 0 0 0 0.2rem rgba(13, 13, 13, 0.25);
 }
 
+.sidebar-link span {
+  text-align: center;
+}
+
 .error-info {
   text-align: center;
   color: red;
@@ -134,16 +138,26 @@ td {
   font-size: 1.1rem;
 }
 
+.bold-text {
+  font-weight: 500;
+  max-width: 20rem;
+}
+
+.push {
+  margin-left: auto;
+  font-weight: 700;
+}
+
 .material-icons.green {
   color: #1eff00;
   font-size: 1.5rem;
-  margin-left: 0.3rem;
+  margin-left: 1rem;
 }
 
 .material-icons.red {
   color: #ff0000;
   font-size: 1.5rem;
-  margin: 0 0 0 0.3rem;
+  margin: 0 0 0 1rem;
 }
 
 .material-icons.notification {
@@ -183,12 +197,22 @@ td {
   border-radius: 4px;
 }
 
+@keyframes imageAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .responsive-image {
   width: 100%;
   max-width: 140px;
   height: auto;
   display: block;
   margin: 2rem auto 3rem;
+  animation: imageAnimation 2s ease-in;
 }
 
 li a:hover {
@@ -246,7 +270,52 @@ span {
   right: -100%;
 }
 
+.chart-container {
+  display: grid;
+  align-items: baseline;
+}
+
+.indicator-container {
+  margin-left: 2rem;
+  text-align: left;
+}
+.Mtest-space-container {
+  display: flex;
+  width: calc(19rem - 26px - 1rem);
+}
+
+.space-container {
+  display: flex;
+  width: 19rem;
+}
+.bold-700 {
+  font-weight: 700;
+}
+
 @media only screen and (min-width: 600px) {
+  .bold-text {
+    max-width: none;
+  }
+  .chart-container {
+    display: grid;
+    align-items: baseline;
+  }
+
+  .indicator-container {
+    margin-left: 2rem;
+    text-align: left;
+  }
+
+  .Mtest-space-container {
+    display: flex;
+    width: calc(20rem - 26px - 1rem);
+  }
+
+  .space-container {
+    display: flex;
+    width: 20rem;
+  }
+
   .charts-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -315,6 +384,10 @@ span {
 
   .big-container {
     width: calc(85% - 1rem);
+  }
+  .indicator-container {
+    margin-left: 1rem;
+    text-align: left;
   }
 }
 

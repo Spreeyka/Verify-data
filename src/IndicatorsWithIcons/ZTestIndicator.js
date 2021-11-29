@@ -5,7 +5,7 @@ export function ZTestIndicator({ value }) {
   return (
     <>
       Z test
-      <p>
+      <p className="bold-text">
         {value.join(" ")}
         <FeedbackIcon
           value={

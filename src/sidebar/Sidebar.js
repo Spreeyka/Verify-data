@@ -36,6 +36,7 @@ export function Sidebar() {
                       pathname: item.path,
                     }}
                     target="_blank"
+                    rel="noopener"
                   >
                     {item.icon}
                     <span>{item.title}</span>

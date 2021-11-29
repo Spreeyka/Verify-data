@@ -7,7 +7,8 @@ export function ChartDescription({ numberOfAnalysedData }) {
     ></ChartDescriptionWithIcon>
   ) : (
     <div className="chart-header">
-      <span>{`Number of analysed data: ${numberOfAnalysedData}`}</span>
+      <span>Number of analysed data:</span>
+      <span className="bold-700">{numberOfAnalysedData}</span>
     </div>
   );
 }
