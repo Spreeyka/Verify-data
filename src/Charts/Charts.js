@@ -34,13 +34,18 @@ const Charts = (props) => {
       if (props.type === "data") {
         res = datasets[id - 1];
         numberValues = getAllNumberFromFlattenedJson(res);
-      } else if (props.type === "api") {
+      }
+      if (props.type === "api") {
         res = await fetch(API[id - 1]);
         const json = await res.json();
         numberValues = getAllNumberFromFlattenedJson(json);
-      } else {
+      }
+      if (props.type === "custom") {
         const json = JSON.parse(localStorage.getItem("data"));
         numberValues = getAllNumberFromFlattenedJson(json);
+      }
+      if (props.type === "csv") {
+        numberValues = localStorage.getItem("data").split(",");
       }
       occurancesOfNumbers = populateOccurrancesOfNumbersArray(numberValues);
       setChartsData(generateDataForChart(occurancesOfNumbers, CONSTANTS));

@@ -19,7 +19,12 @@ function App() {
           <Route path="/api/charts/:id">
             <Charts type="api"></Charts>
           </Route>
-          <Route component={Charts} path="/custom/charts"></Route>
+          <Route path="/custom/charts">
+            <Charts type="custom"></Charts>
+          </Route>
+          <Route path="/csv/charts">
+            <Charts type="csv"></Charts>
+          </Route>
           <div className="main-container">
             <Sidebar />
             <div className="big-container">

@@ -2,10 +2,15 @@ import Button from "react-bootstrap/Button";
 import { Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CsvReader from "./Utils/CsvReader";
 
 export function DataModal(props) {
   const [formData, setFormData] = useState("");
-  let chartsData = {};
+  const [isCsvLoaded, setIsCsvLoaded] = useState(false);
+  let callback = (valueFromCsvReader) => {
+    setIsCsvLoaded(valueFromCsvReader);
+  };
+  let pathname;
 
   function handleChange(e) {
     setFormData(e.target.value);
@@ -66,12 +71,12 @@ export function DataModal(props) {
         Incorrect format. Make sure to insert data in JSON
       </p>
       <Modal.Footer>
+        <CsvReader callbackFunc={callback}>
+          {(pathname = isCsvLoaded ? "/csv/charts" : "/custom/charts")}
+        </CsvReader>
         <Link
           to={{
-            pathname: "/custom/charts",
-            type: "custom",
-            formData,
-            chartsData,
+            pathname: pathname,
           }}
         >
           <Button variant="dark" onClick={props.onHide} disabled>

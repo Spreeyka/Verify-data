@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { SIDEBAR_DATA } from "./SidebarData";
 import { IconContext } from "react-icons";
 import MyImage from "../images/benek2.webp";
+import * as SiIcons from "react-icons/si";
 
 export function Sidebar() {
   const [hiddenSidebar, setHiddenSidebar] = useState(true);
@@ -44,6 +45,19 @@ export function Sidebar() {
                 </li>
               );
             })}
+            <li className="nav-text about-author">
+              <Link
+                className="sidebar-link"
+                to={{
+                  pathname: "https://github.com/Spreeyka/",
+                }}
+                target="_blank"
+                rel="noopener"
+              >
+                <SiIcons.SiAboutdotme />
+                <span>About author</span>
+              </Link>
+            </li>
           </ul>
         </nav>
       </IconContext.Provider>

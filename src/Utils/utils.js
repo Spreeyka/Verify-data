@@ -69,7 +69,7 @@ export function calculateOccurancesOfDataNumbers(data, position) {
   let occurancesOfNumbersArray = new Array(10);
   occurancesOfNumbersArray.fill(0);
   for (let stringValue of data) {
-    stringValue = stringValue.replace(/,{1}[0-9]*/, ""); //dodac obsluge do kropki tez w dwoch miejscach
+    stringValue = stringValue.replace(/,{1}[0-9]*/, "");
     if (position === 0)
       occurancesOfNumbersArray[Number(stringValue[position]) - 1] += 1;
     else {
@@ -84,7 +84,7 @@ export function calculateConditionalOccurances_1_x(data) {
   occurancesOfNumbersArray.fill(0);
   data.forEach((e) => {
     if (e[0] === "1") {
-      e.replace(/,{1}[0-9]*/, ""); //chyba git??
+      e.replace(/,{1}[0-9]*/, "");
       occurancesOfNumbersArray[e[1]]++;
     }
   });

@@ -39,7 +39,7 @@ export function calculate_F_Parameter_Array(pArray) {
   pArray.forEach((value, index) => {
     if (index === 0) fArray.push(value);
     else {
-      fArray.push(value + pArray[index - 1]); //fixed bug
+      fArray.push(value + pArray[index - 1]);
     }
   });
   return fArray;
@@ -93,7 +93,7 @@ export function calculateKolmogorovSmirnovTest(d_Parameter, sampleSize) {
   return d_Parameter * Math.sqrt(sampleSize ** 2 / (2 * sampleSize));
 }
 
-//does not work for D3 test (because theoretical C parameters are exactly the same)
+//does not apply to D3 test (because theoretical C parameters are exactly the same)
 export function calculateCorrelationCoefficient(
   empiricalOccurrancesOfNumbersArray,
   theoreticalOccurancesOfNumbersArray
