@@ -3,15 +3,13 @@ import { FeedbackIcon } from "../FeedbackIcon";
 
 export function ChiSquareIndicator({ value, chartConstant }) {
   return (
-    <p>
-      <div className="space-container">
-        Chi square test: <span className="push">{value.toFixed(2)}</span>
-        <FeedbackIcon
-          value={value}
-          critValue={CHI_SQUARE_CRITICAL_VALUES[chartConstant][2]}
-          operator={`>=`}
-        ></FeedbackIcon>
-      </div>
-    </p>
+    <div className="space-container">
+      Chi square test: <span className="push">{value.toFixed(2)}</span>
+      <FeedbackIcon
+        value={value}
+        critValue={CHI_SQUARE_CRITICAL_VALUES[chartConstant][2]}
+        operator={`>=`}
+      ></FeedbackIcon>
+    </div>
   );
 }

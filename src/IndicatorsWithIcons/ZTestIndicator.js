@@ -5,7 +5,7 @@ export function ZTestIndicator({ value }) {
   return (
     <>
       Z test
-      <p className="bold-text">
+      <div className="bold-text">
         {value.join(" ")}
         <FeedbackIcon
           value={
@@ -16,7 +16,7 @@ export function ZTestIndicator({ value }) {
           critValue={4}
           operator={`>`}
         ></FeedbackIcon>{" "}
-      </p>
+      </div>
     </>
   );
 }

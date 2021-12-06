@@ -27,10 +27,12 @@ function App() {
           </Route>
           <div className="main-container">
             <Sidebar />
-            <div className="big-container">
+            <div className="layout-container">
               <Header></Header>
               <Tables></Tables>
-              <Button content="Check your own data"></Button>
+              <div className="button-wrapper">
+                <Button content="Check your own data"></Button>
+              </div>
             </div>
           </div>
         </Switch>
