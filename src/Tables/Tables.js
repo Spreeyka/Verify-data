@@ -1,9 +1,10 @@
 import { Table } from "./Table";
 import { API } from "../Utils/Constants";
 import { getDatasetNames } from "../Utils/utils";
+import requireContext from "require-context.macro";
 
 let apiNames = API;
-let datasetNames = getDatasetNames(require.context("../data", false, /json$/));
+let datasetNames = getDatasetNames(requireContext("../data", false, /json$/));
 
 export function Tables() {
   return (

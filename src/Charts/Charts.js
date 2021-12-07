@@ -13,6 +13,7 @@ import { Indicators } from "../Indicators";
 import { ErrorPage } from "../ErrorPage";
 import { BackButton } from "../Buttons/BackButton";
 import { Link } from "react-router-dom";
+import requireContext from "require-context.macro";
 
 const Charts = (props) => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const Charts = (props) => {
   const [error, setError] = useState(false);
   const [status, setStatus] = useState("loading");
 
-  const datasets = importAll(require.context("../data/", false, /\.(json)$/));
+  const datasets = importAll(requireContext("../data/", false, /\.(json)$/));
   let res;
   let numberValues;
   let occurancesOfNumbers;
