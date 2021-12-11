@@ -11,13 +11,14 @@ import {
 } from "recharts";
 import { ChartDescription } from "./ChartDescription";
 
-export default function Chart({ data, numberOfAnalysedData }) {
+export default function Chart({ data, numberOfAnalysedData, index }) {
   return (
     <div>
       <ChartDescription
+        index={index}
         numberOfAnalysedData={numberOfAnalysedData}
       ></ChartDescription>
-      <div>
+      <div data-testid="chart">
         <ResponsiveContainer aspect={1.5} width="99%" height="100%">
           <LineChart
             data={data}

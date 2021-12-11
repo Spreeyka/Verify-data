@@ -18,7 +18,8 @@ export function ChartDescriptionWithIcon({ numberOfAnalysedData }) {
       }
     >
       <div className="chart-header">
-        <span>{`Number of analysed data: ${numberOfAnalysedData}`}</span>
+        <span className="bold-700">{numberOfAnalysedData}</span>
+        <span className="analysed-numbers">analysed numbers</span>
         {numberOfAnalysedData < 100 ? (
           <span className="material-icons notification">help</span>
         ) : null}

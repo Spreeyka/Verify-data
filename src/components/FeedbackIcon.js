@@ -23,7 +23,7 @@ export function FeedbackIcon({ value, critValue, operator }) {
       overlay={
         <Popover id={`popover-positioned-top`}>
           <Popover.Body>
-            <div className="sample-warning">
+            <div className="sample-warning" data-testid="tooltip">
               {doesFulfill
                 ? `According to this parameter, data does not match Benford's distribution`
                 : `According to this parameter, data matches Benford's distribution`}

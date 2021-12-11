@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { SIDEBAR_DATA } from "./SidebarData";
+import { SIDEBAR_DATA } from "../sidebar/SidebarData";
 import { IconContext } from "react-icons";
-import MyImage from "../images/benek2.webp";
+import BenfordImage from "../../images/benek2.webp";
 import * as SiIcons from "react-icons/si";
 
 export function Sidebar() {
@@ -20,13 +20,22 @@ export function Sidebar() {
         <nav className={hiddenSidebar ? "nav-menu hidden" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li>
-              <img
-                src={MyImage}
-                width="140"
-                height="165"
-                alt="Benford"
-                className="responsive-image"
-              />
+              <Link
+                className="sidebar-link"
+                to={{
+                  pathname: "https://en.wikipedia.org/wiki/Frank_Benford",
+                }}
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src={BenfordImage}
+                  width="140"
+                  height="165"
+                  alt="Benford"
+                  className="responsive-image"
+                />
+              </Link>
             </li>
             {SIDEBAR_DATA.map((item, index) => {
               return (

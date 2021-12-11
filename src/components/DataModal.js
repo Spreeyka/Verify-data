@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import { Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CsvReader from "./Utils/CsvReader";
+import CsvReader from "../Utils/CsvReader";
 
 export function DataModal(props) {
   const [formData, setFormData] = useState("");

@@ -53,7 +53,7 @@ export function generateDataForChart(data, benfordsValues) {
           number: digit++,
           benfordsValue: benfordsValues[chartConstant][i],
           calculatedData: Number(
-            (data[j][i] / sumAllNumberOccurances(data[j])) * 100
+            ((data[j][i] / sumAllNumberOccurances(data[j])) * 100).toFixed(1)
           ),
         });
       }

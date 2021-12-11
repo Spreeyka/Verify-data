@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import "../App.css";
+import "../../App.css";
 import { useParams } from "react-router";
 import Chart from "./Chart";
-import { API, CONSTANTS } from "../Utils/Constants";
+import { API, CONSTANTS } from "../../Utils/Constants";
 import {
   getAllNumberFromFlattenedJson,
   populateOccurrancesOfNumbersArray,
   generateDataForChart,
   importAll,
-} from "../Utils/utils";
+} from "../../Utils/utils";
 import { Indicators } from "../Indicators";
 import { ErrorPage } from "../ErrorPage";
 import { BackButton } from "../Buttons/BackButton";
@@ -21,7 +21,7 @@ const Charts = (props) => {
   const [error, setError] = useState(false);
   const [status, setStatus] = useState("loading");
 
-  const datasets = importAll(requireContext("../data/", false, /\.(json)$/));
+  const datasets = importAll(requireContext("../../data/", false, /\.(json)$/));
   let res;
   let numberValues;
   let occurancesOfNumbers;
@@ -63,6 +63,7 @@ const Charts = (props) => {
         {Object.values(chartsData).map((value, index) => (
           <div key={index} className="chart-container">
             <Chart
+              index={index}
               data={value.slice(0, -1)}
               numberOfAnalysedData={
                 value[value.length - 1].numberOfAnalysedData

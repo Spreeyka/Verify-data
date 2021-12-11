@@ -11,7 +11,7 @@ import {
   calculate_M3_Test,
   calculate_P_Parameter_Array,
   calculate_Z_Test,
-} from "./Utils/indicatorsUtils";
+} from "../Utils/indicatorsUtils";
 import { KolmogorovSmirnovIndicator } from "./IndicatorsWithIcons/KolmogorovSmirnovIndicator";
 import { CorrelationCoefficientIndicator } from "./IndicatorsWithIcons/CorrelationCoefficientIndicator";
 import { ChiSquareIndicator } from "./IndicatorsWithIcons/ChiSquareIndicator";

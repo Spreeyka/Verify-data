@@ -1,4 +1,4 @@
-import { CORRELATION_CRITICAL_VALUES } from "../Utils/Constants";
+import { CORRELATION_CRITICAL_VALUES } from "../../Utils/Constants";
 import { FeedbackIcon } from "../FeedbackIcon";
 
 export function CorrelationCoefficientIndicator({ value, index }) {

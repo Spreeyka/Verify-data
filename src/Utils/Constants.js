@@ -4,6 +4,13 @@
 // CHART_2_CONSTANTS - % of numbers from 0-9 occuring on third significant position
 // CHART_3_CONSTANTS - % of numbers from 0-9 occuring on second significant position, where first significant position number equals 1
 
+export const TITLES = [
+  "First leading digit analysis",
+  "Second leading digit analysis",
+  "Third leading digit analysis",
+  "Second digit if first digit is 1",
+];
+
 export const CONSTANTS = {
   CHART_0_CONSTANTS: [30.1, 17.6, 12.5, 9.7, 7.9, 6.7, 5.8, 5.1, 4.6],
   CHART_1_CONSTANTS: [12.0, 11.4, 10.9, 10.4, 10.0, 9.7, 9.3, 9.0, 8.8, 8.5],

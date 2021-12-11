@@ -1,4 +1,4 @@
-import { KOLMOGOROV_SMIRNOV_CRITICAL_VALUES } from "../Utils/Constants";
+import { KOLMOGOROV_SMIRNOV_CRITICAL_VALUES } from "../../Utils/Constants";
 import { FeedbackIcon } from "../FeedbackIcon";
 
 export function KolmogorovSmirnovIndicator({ value }) {
