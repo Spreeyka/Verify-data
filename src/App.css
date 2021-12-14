@@ -107,7 +107,7 @@ td {
 }
 
 .layout-container {
-  margin: 2rem 1rem 0 1rem;
+  margin: 2rem 1rem 0 2rem;
   display: flex;
   gap: 1rem;
   flex-flow: column nowrap;
@@ -214,7 +214,7 @@ td {
 
 .about-author {
   position: relative;
-  top: 25%;
+  top: 5%;
   height: 150px;
 }
 
@@ -297,6 +297,7 @@ img:hover {
   width: 100%;
   padding: 0;
   list-style: none;
+  height: 100%;
 }
 
 .navbar-toggle {
@@ -328,20 +329,21 @@ span {
   position: absolute;
   right: 3%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 }
 
 .nav-menu {
   background-image: url(./images/tlo5.webp);
   width: 55vw;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   position: fixed;
   top: 0;
   margin-left: auto;
   left: 45%;
+  z-index: 1;
 }
 
 .nav-menu.hidden {
@@ -415,7 +417,6 @@ span {
     background: none;
     position: fixed;
     right: 2.5%;
-    z-index: 1;
   }
 
   .nav-menu {
@@ -432,6 +433,11 @@ span {
 }
 
 @media only screen and (min-width: 1200px) {
+  .about-author {
+    position: relative;
+    top: 25%;
+    height: 150px;
+  }
   .tables-div {
     display: flex;
     flex-direction: row;
