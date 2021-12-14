@@ -28,7 +28,7 @@ export default function CsvReader(props) {
   };
 
   return (
-    <form id="csv-form">
+    <form id="csv-form" tabIndex={999}>
       <input
         type="file"
         className="file-container__input"
