@@ -1,10 +1,3 @@
-.App-header {
-  margin: 0;
-  padding: 0;
-  font-family: "Josefin Slab", serif;
-  color: white;
-}
-
 .table {
   margin-bottom: 0 !important;
 }
@@ -87,23 +80,6 @@ td {
   font-weight: bold;
   margin-bottom: 2rem;
   visibility: hidden;
-}
-
-.website-title {
-  font-size: 3.2rem;
-}
-
-.App-header {
-  font-family: "Josefin Slab", serif;
-  text-align: center;
-  color: white;
-  order: -1;
-  width: auto;
-}
-.description {
-  margin-top: 0.8rem;
-  line-height: 1.2;
-  font-size: 1.7rem;
 }
 
 .layout-container {

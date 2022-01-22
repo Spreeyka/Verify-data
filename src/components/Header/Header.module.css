@@ -1,0 +1,19 @@
+.header {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Slab", serif;
+  color: var(--white);
+  text-align: center;
+  order: -1;
+  width: auto;
+}
+
+.header__title {
+  font-size: var(--xxxxl);
+}
+
+.header__description {
+  margin-top: 0.8rem;
+  line-height: 1.2;
+  font-size: var(--xxl);
+}

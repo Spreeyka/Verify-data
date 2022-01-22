@@ -9,8 +9,8 @@ import {
   generateDataForChart,
   importAll,
 } from "../../Utils/utils";
-import { Indicators } from "../Indicators";
-import { ErrorPage } from "../ErrorPage";
+import { Indicators } from "../Indicators/Indicators";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
 import { BackButton } from "../Buttons/BackButton";
 import { Link } from "react-router-dom";
 import requireContext from "require-context.macro";

@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(images/2037530.webp) no-repeat center center/cover fixed;
+  background: url(../../images/2037530.webp) no-repeat center center/cover fixed;
 }
 
 code {

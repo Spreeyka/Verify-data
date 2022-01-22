@@ -1,5 +1,5 @@
 import { CHI_SQUARE_CRITICAL_VALUES } from "../../Utils/Constants";
-import { FeedbackIcon } from "../FeedbackIcon";
+import { FeedbackIcon } from "../FeedbackIcon/FeedbackIcon";
 
 export function ChiSquareIndicator({ value, chartConstant }) {
   return (

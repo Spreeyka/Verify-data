@@ -1,8 +1,10 @@
+import styles from "./Header.module.css";
+
 export function Header() {
   return (
-    <header className="App-header">
-      <p className="website-title">Benford's law</p>
-      <div className="description">
+    <header className={`${styles.header}`}>
+      <p className={`${styles.header__title}`}>Benford's law</p>
+      <div className={`${styles.header__description}`}>
         <div>
           <p>The law of anomalous numbers, or the first-digit law</p>
         </div>

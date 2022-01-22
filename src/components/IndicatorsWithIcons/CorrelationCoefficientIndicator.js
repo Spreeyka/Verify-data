@@ -1,5 +1,5 @@
 import { CORRELATION_CRITICAL_VALUES } from "../../Utils/Constants";
-import { FeedbackIcon } from "../FeedbackIcon";
+import { FeedbackIcon } from "../FeedbackIcon/FeedbackIcon";
 
 export function CorrelationCoefficientIndicator({ value, index }) {
   const INDEX_OF_CHART_TO_NOT_APPLY = 2;

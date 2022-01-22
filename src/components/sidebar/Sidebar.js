@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { SIDEBAR_DATA } from "../sidebar/SidebarData";
+import { SIDEBAR_DATA } from "./SidebarData";
 import { IconContext } from "react-icons";
 import BenfordImage from "../../images/benek2.webp";
 import * as SiIcons from "react-icons/si";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Error from "../images/2.png";
+import Error from "../../images/2.png";
 
 export function ErrorPage() {
   return (

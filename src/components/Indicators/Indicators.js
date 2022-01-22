@@ -11,12 +11,12 @@ import {
   calculate_M3_Test,
   calculate_P_Parameter_Array,
   calculate_Z_Test,
-} from "../Utils/indicatorsUtils";
-import { KolmogorovSmirnovIndicator } from "./IndicatorsWithIcons/KolmogorovSmirnovIndicator";
-import { CorrelationCoefficientIndicator } from "./IndicatorsWithIcons/CorrelationCoefficientIndicator";
-import { ChiSquareIndicator } from "./IndicatorsWithIcons/ChiSquareIndicator";
-import { ZTestIndicator } from "./IndicatorsWithIcons/ZTestIndicator";
-import { MTests } from "./IndicatorsWithIcons/MTests";
+} from "../../Utils/indicatorsUtils";
+import { KolmogorovSmirnovIndicator } from "../IndicatorsWithIcons/KolmogorovSmirnovIndicator";
+import { CorrelationCoefficientIndicator } from "../IndicatorsWithIcons/CorrelationCoefficientIndicator";
+import { ChiSquareIndicator } from "../IndicatorsWithIcons/ChiSquareIndicator";
+import { ZTestIndicator } from "../IndicatorsWithIcons/ZTestIndicator";
+import { MTests } from "../IndicatorsWithIcons/MTests";
 
 export function Indicators({ data, index }) {
   let sampleSize = data[data.length - 1].numberOfAnalysedData;

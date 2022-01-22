@@ -1,5 +1,5 @@
 import { KOLMOGOROV_SMIRNOV_CRITICAL_VALUES } from "../../Utils/Constants";
-import { FeedbackIcon } from "../FeedbackIcon";
+import { FeedbackIcon } from "../FeedbackIcon/FeedbackIcon";
 
 export function KolmogorovSmirnovIndicator({ value }) {
   return (
