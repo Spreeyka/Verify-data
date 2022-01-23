@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../App.css";
 import { useParams } from "react-router";
-import Chart from "./Chart";
+import Chart from "../Chart/Chart";
 import { API, CONSTANTS } from "../../Utils/Constants";
 import {
   getAllNumberFromFlattenedJson,
@@ -11,9 +11,10 @@ import {
 } from "../../Utils/utils";
 import { Indicators } from "../Indicators/Indicators";
 import { ErrorPage } from "../ErrorPage/ErrorPage";
-import { BackButton } from "../Buttons/BackButton";
+import { BackButton } from "../BackButton/BackButton";
 import { Link } from "react-router-dom";
 import requireContext from "require-context.macro";
+import styles from "./Charts.module.css";
 
 const Charts = (props) => {
   const { id } = useParams();
@@ -59,9 +60,9 @@ const Charts = (props) => {
 
   return error === false ? (
     <>
-      <div className="charts-container">
+      <div className={`${styles.charts__wrapper}`}>
         {Object.values(chartsData).map((value, index) => (
-          <div key={index} className="chart-container">
+          <div key={index} className={`${styles.wrapper}`}>
             <Chart
               index={index}
               data={value.slice(0, -1)}
@@ -80,7 +81,9 @@ const Charts = (props) => {
         ))}
       </div>
       {status === "loaded" ? (
-        <div className="button-container chart-button-container">
+        <div
+          className={`${styles.button__container} ${styles.chart__button__container}`}
+        >
           <Link style={{ textDecoration: "none" }} to="/">
             <BackButton content="◄◄◄ go back to homepage"></BackButton>
           </Link>

@@ -1,5 +1,6 @@
 import { Popover } from "react-bootstrap";
 import { OverlayTrigger } from "react-bootstrap";
+import styles from "./FeedbackIcon.module.css";
 
 export function FeedbackIcon({ value, critValue, operator }) {
   let operators = {
@@ -23,7 +24,7 @@ export function FeedbackIcon({ value, critValue, operator }) {
       overlay={
         <Popover id={`popover-positioned-top`}>
           <Popover.Body>
-            <div className="sample-warning" data-testid="tooltip">
+            <div className={`${styles.sample__warning}`} data-testid="tooltip">
               {doesFulfill
                 ? `According to this parameter, data does not match Benford's distribution`
                 : `According to this parameter, data matches Benford's distribution`}
@@ -33,9 +34,9 @@ export function FeedbackIcon({ value, critValue, operator }) {
       }
     >
       {doesFulfill ? (
-        <span className="material-icons red">error</span>
+        <span className={`material-icons ${styles.red}`}>error</span>
       ) : (
-        <span className="material-icons green">done</span>
+        <span className={`material-icons ${styles.green}`}>done</span>
       )}
     </OverlayTrigger>
   );

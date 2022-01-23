@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { ChartDescription } from "./ChartDescription";
+import { ChartDescription } from "../ChartDescription/ChartDescription";
 
 export default function Chart({ data, numberOfAnalysedData, index }) {
   return (

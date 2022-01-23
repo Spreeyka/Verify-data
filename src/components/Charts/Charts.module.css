@@ -1,0 +1,53 @@
+.wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  align-items: baseline;
+}
+
+.wrapper:nth-child(3) h5.correlation-header {
+  display: none;
+  visibility: hidden;
+}
+
+.button__container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chart__button__container {
+  margin-top: 3rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .charts__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 0.5rem;
+  }
+
+  .wrapper {
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .charts__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.8rem;
+  }
+
+  .chart__button__container {
+    margin-top: 1rem;
+  }
+}

@@ -1,5 +1,5 @@
 import { TITLES } from "../../Utils/Constants";
-import { ChartDescriptionWithIcon } from "./ChartDescriptionWithIcon";
+import { ChartDescriptionWithIcon } from "../ChartDescriptionWithIcon/ChartDescriptionWithIcon";
 
 export function ChartDescription({ numberOfAnalysedData, index }) {
   const title = TITLES[index];

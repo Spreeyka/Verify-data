@@ -4,7 +4,7 @@ import Charts from "./components/Charts/Charts";
 import { Header } from "./components/Header/Header";
 import { Imports } from "./Utils/Imports";
 import { Tables } from "./components/Tables/Tables";
-import { Button } from "./components/Buttons/Button";
+import { Button } from "./components/Button/Button";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 
 function App() {

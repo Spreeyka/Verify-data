@@ -3,6 +3,7 @@ import { Modal, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CsvReader from "../../Utils/CsvReader";
+import styles from "./DataModal.module.css";
 
 export function DataModal(props) {
   const [formData, setFormData] = useState("");
@@ -18,8 +19,8 @@ export function DataModal(props) {
   }
 
   function handleErrorJson() {
-    if (document.querySelector(".error-info")) {
-      document.querySelector(".error-info").style.visibility = "visible";
+    if (document.querySelector(`.${styles.error}`)) {
+      document.querySelector(`.${styles.error}`).style.visibility = "visible";
       document.querySelector(".form-control").style.boxShadow =
         "0px 0px 0px 0.3rem red";
     }
@@ -28,7 +29,7 @@ export function DataModal(props) {
   function handleCorrectJson() {
     document.querySelector(".form-control").style.boxShadow =
       "0px 0px 0px 0.3rem green";
-    document.querySelector(".error-info").style.visibility = "hidden";
+    document.querySelector(`.${styles.error}`).style.visibility = "hidden";
     document.querySelector(".btn-dark").disabled = false;
   }
 
@@ -67,7 +68,7 @@ export function DataModal(props) {
           </Form.Group>
         </Form>
       </Modal.Body>
-      <p className="error-info">
+      <p className={`${styles.error}`}>
         Incorrect format. Make sure to insert data in JSON
       </p>
       <Modal.Footer>
