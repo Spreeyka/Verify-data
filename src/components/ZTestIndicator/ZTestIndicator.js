@@ -1,11 +1,12 @@
 import { Z_TEST_CRITICAL_VALUES } from "../../Utils/Constants";
 import { FeedbackIcon } from "../FeedbackIcon/FeedbackIcon";
+import styles from "./ZTestIndicator.module.css";
 
 export function ZTestIndicator({ value }) {
   return (
     <>
       <p>Z test</p>
-      <div className="bold-text">
+      <div className={`${styles.wrapper}`}>
         {value.join(" ")}
         <FeedbackIcon
           value={

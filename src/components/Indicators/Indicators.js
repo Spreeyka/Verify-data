@@ -12,11 +12,12 @@ import {
   calculate_P_Parameter_Array,
   calculate_Z_Test,
 } from "../../Utils/indicatorsUtils";
-import { KolmogorovSmirnovIndicator } from "../IndicatorsWithIcons/KolmogorovSmirnovIndicator";
-import { CorrelationCoefficientIndicator } from "../IndicatorsWithIcons/CorrelationCoefficientIndicator";
-import { ChiSquareIndicator } from "../IndicatorsWithIcons/ChiSquareIndicator";
-import { ZTestIndicator } from "../IndicatorsWithIcons/ZTestIndicator";
-import { MTests } from "../IndicatorsWithIcons/MTests";
+import { KolmogorovSmirnovIndicator } from "../KolmogorovSmirnovIndicator/KolmogorovSmirnovIndicator";
+import { CorrelationCoefficientIndicator } from "../CorrelationCoefficientIndicator/CorrelationCoefficientIndicator";
+import { ChiSquareIndicator } from "../ChiSquareIndicator/ChiSquareIndicator";
+import { ZTestIndicator } from "../ZTestIndicator/ZTestIndicator";
+import { MTests } from "../MTests/MTests";
+import styles from "./Indicators.module.css";
 
 export function Indicators({ data, index }) {
   let sampleSize = data[data.length - 1].numberOfAnalysedData;
@@ -93,7 +94,7 @@ export function Indicators({ data, index }) {
   let chartConstant = "CHART_" + index + "_CONSTANTS";
 
   return (
-    <div className="indicator-container">
+    <div className={`${styles["wrapper"]}`}>
       <ZTestIndicator value={Z_Test}></ZTestIndicator>
       <KolmogorovSmirnovIndicator
         value={kolmogorovSmirnovTest}

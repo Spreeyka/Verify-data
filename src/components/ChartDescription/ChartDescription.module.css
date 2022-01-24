@@ -1,0 +1,15 @@
+.header {
+  color: white;
+  text-align: center;
+  font-size: var(--xl);
+}
+
+.bold-700 {
+  display: inline-block;
+  font-weight: 700;
+  font-size: var(--xl);
+}
+
+.analysed-numbers {
+  font-size: var(--l);
+}

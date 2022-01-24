@@ -1,5 +1,6 @@
 import { createRef } from "react";
 import { GrDocumentCsv } from "react-icons/gr";
+import styles from "./CsvReader.module.css";
 
 export default function CsvReader(props) {
   let ref = createRef();
@@ -31,14 +32,14 @@ export default function CsvReader(props) {
     <form id="csv-form" tabIndex={999}>
       <input
         type="file"
-        className="file-container__input"
+        className={`${styles[`file-container-input`]}`}
         accept=".csv"
         onChange={(e) => {
           ref = e.target.files[0];
           if (ref) submit();
         }}
       />
-      <div className="file-container__icon">
+      <div className={`${styles[`file-container-icon`]}`}>
         <GrDocumentCsv></GrDocumentCsv>
       </div>
       Or load data from CSV

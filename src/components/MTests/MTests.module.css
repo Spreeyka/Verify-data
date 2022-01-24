@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  width: calc(19rem - 26px - 1rem);
+  margin-bottom: 10px;
+}
+
+.push {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 600px) {
+  .wrapper {
+    display: flex;
+    width: calc(20rem - 26px - 1rem);
+  }
+}

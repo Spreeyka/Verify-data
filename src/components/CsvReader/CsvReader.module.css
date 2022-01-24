@@ -1,0 +1,30 @@
+.file-container-input {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.file-container-icon {
+  margin-right: 8px;
+}
+
+#csv-form {
+  margin-right: auto !important;
+  position: relative;
+  align-self: flex-start;
+  align-items: center;
+  display: flex;
+  min-width: 200px;
+  min-height: 38px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+}
+
+#csv-form:hover,
+#csv-form:active {
+  box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}

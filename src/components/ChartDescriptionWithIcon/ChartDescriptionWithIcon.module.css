@@ -1,0 +1,26 @@
+.header {
+  color: var(--white);
+  text-align: center;
+  font-size: var(--xxl);
+}
+
+.bold-700 {
+  display: inline-block;
+  font-weight: 700;
+  font-size: var(--xl);
+}
+
+.analysed-numbers {
+  font-size: var(--l);
+}
+
+.material-icons.notification {
+  font-size: var(--xl);
+  margin: 0 0 0 0.5rem;
+}
+
+.sample-warning {
+  font-weight: 700;
+  font-size: var(--m);
+  text-align: center;
+}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from "./Table.module.css";
 
 export function Table(props) {
   let id = 0;
@@ -8,7 +9,7 @@ export function Table(props) {
   const API_EXTENSION = "https://raw.githubusercontent.com/".length;
 
   return (
-    <table className="table table-striped">
+    <table className={`table-striped table ${styles.table}`}>
       <thead>
         <tr>
           <th scope="col"></th>

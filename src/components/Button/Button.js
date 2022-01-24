@@ -11,7 +11,7 @@ export function Button({ content }) {
       <button
         onClick={() => setShowModal(true)}
         type="button"
-        className="btn btn-outline-light btn-lg"
+        className={`btn btn-outline-light btn-lg ${styles["btn-lg"]}`}
       >
         {content}
       </button>

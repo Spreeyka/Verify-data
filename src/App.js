@@ -9,7 +9,7 @@ import { Sidebar } from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Imports></Imports>
       <Router>
         <Switch>
@@ -25,14 +25,12 @@ function App() {
           <Route path="/csv/charts">
             <Charts type="csv"></Charts>
           </Route>
-          <div className="main-container">
+          <div>
             <Sidebar />
             <div className="layout-container">
               <Header></Header>
               <Tables></Tables>
-              <div className="button-wrapper">
-                <Button content="Check your own data"></Button>
-              </div>
+              <Button content="Check your own data"></Button>
             </div>
           </div>
         </Switch>
