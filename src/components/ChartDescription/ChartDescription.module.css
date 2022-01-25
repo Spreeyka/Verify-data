@@ -1,5 +1,5 @@
 .header {
-  color: white;
+  color: var(--white);
   text-align: center;
   font-size: var(--xl);
 }
@@ -12,4 +12,8 @@
 
 .analysed-numbers {
   font-size: var(--l);
+}
+
+span {
+  margin-left: 9px;
 }

@@ -29,7 +29,7 @@ export default function CsvReader(props) {
   };
 
   return (
-    <form id="csv-form" tabIndex={999}>
+    <form id={`${styles[`csv-form`]}`} tabIndex={999}>
       <input
         type="file"
         className={`${styles[`file-container-input`]}`}

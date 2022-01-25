@@ -1,11 +1,11 @@
 li a:hover {
-  color: #000000;
+  color: var(--black);
   text-decoration: none;
   font-weight: 700;
 }
 
 .menu-bars {
-  font-size: 2rem;
+  font-size: var(--xxxl);
   background: none;
   position: absolute;
   right: 3%;
@@ -63,8 +63,8 @@ li a:hover {
 
 .nav-text a {
   text-decoration: none;
-  color: #f5f5f5;
-  font-size: 18px;
+  color: var(--white);
+  font-size: var(--l);
   width: 95%;
   height: 100%;
   display: flex;
@@ -76,7 +76,7 @@ li a:hover {
 
 .nav-text a:hover,
 img:hover {
-  background-color: #ffffff5c;
+  background-color: var(--transparent_grey);
   border-radius: 10px;
 }
 
@@ -88,7 +88,7 @@ img:hover {
 
 @media only screen and (min-width: 600px) {
   .menu-bars {
-    font-size: 2rem;
+    font-size: var(--xxxl);
     background: none;
     position: fixed;
     right: 2.5%;
@@ -115,7 +115,7 @@ img:hover {
 
   .nav-menu {
     background-image: none;
-    background-color: #343a4096;
+    background-color: var(--transparent_dark_grey);
     width: 15vw;
     padding: 0;
     height: 100vh;

@@ -6,12 +6,12 @@
 
 .green {
   color: #1eff00;
-  font-size: 1.5rem;
+  font-size: var(--xl);
   margin-left: 1rem;
 }
 
 .red {
   color: #ff0000;
-  font-size: 1.5rem;
+  font-size: var(--xl);
   margin: 0 0 0 1rem;
 }

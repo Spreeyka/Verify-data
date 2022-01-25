@@ -10,4 +10,9 @@
   --xxxxxl: 52px;
 
   --white: #ffffff;
+  --black: #000000;
+  --grey: #2a2a2a;
+  --transparent_grey: #ffffff5c;
+  --transparent_dark_grey: #343a4096;
+  --red: #ff0000;
 }

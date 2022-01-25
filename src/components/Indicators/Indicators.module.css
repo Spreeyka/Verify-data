@@ -4,9 +4,9 @@
 
 .wrapper {
   margin: 4px 0 0 2rem;
-  color: white;
+  color: var(--white);
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--l);
   text-align: left;
 }
 

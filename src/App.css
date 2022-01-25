@@ -15,27 +15,3 @@
     opacity: 1;
   }
 }
-
-td a {
-  color: #2a2a2a;
-  font-weight: 600;
-}
-
-p a {
-  color: white;
-  font-weight: 600;
-  margin-right: 0.3rem;
-}
-
-thead,
-td {
-  text-align: center;
-}
-
-.data {
-  color: white;
-}
-
-span {
-  margin-left: 9px;
-}
