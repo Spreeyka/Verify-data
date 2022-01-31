@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SIDEBAR_DATA } from "./SidebarData";
 import { IconContext } from "react-icons";
-import BenfordImage from "../../images/benek2.webp";
+import BenfordImage from "../images/benek2.webp";
 import * as SiIcons from "react-icons/si";
 import styles from "./Sidebar.module.css";
 
