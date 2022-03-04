@@ -6,9 +6,9 @@ https://user-images.githubusercontent.com/37092171/156784559-262e03f9-ee99-43d2-
 
 Technology used:
 
-React
-Recharts
-React bootstrap
+React\
+Recharts\
+React bootstrap\
 CSS modules
 
 The goal of this application is to check whether potential data are fraudulent using benford's law analysis and compliance factors
